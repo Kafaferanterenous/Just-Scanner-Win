@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+ xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+ xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+ xmlns:dpws="http://schemas.xmlsoap.org/ws/2006/02/devprof"
+ xmlns:wscn="http://schemas.microsoft.com/windows/2006/08/wdp/scan">
+ <soap:Header>
+  <wsa:Action>http://schemas.xmlsoap.org/ws/2004/09/transfer/GetResponse</wsa:Action>
+  <wsa:RelatesTo>urn:uuid:33333333-3333-3333-3333-333333333333</wsa:RelatesTo>
+ </soap:Header>
+ <soap:Body>
+  <wsx:Metadata>
+   <wsx:MetadataSection Dialect="http://schemas.xmlsoap.org/ws/2006/02/devprof/ThisModel">
+    <dpws:ThisModel>
+     <dpws:Manufacturer>Synthetic Devices</dpws:Manufacturer>
+     <dpws:ModelName>Offline Lab Scanner</dpws:ModelName>
+    </dpws:ThisModel>
+   </wsx:MetadataSection>
+   <wsx:MetadataSection Dialect="http://schemas.xmlsoap.org/ws/2006/02/devprof/Relationship">
+    <dpws:Relationship Type="http://schemas.xmlsoap.org/ws/2006/02/devprof/host">
+     <dpws:Host>
+      <wsa:EndpointReference>
+       <wsa:Address>urn:uuid:22222222-2222-2222-2222-222222222222</wsa:Address>
+      </wsa:EndpointReference>
+     </dpws:Host>
+     <dpws:Hosted>
+      <wsa:EndpointReference>
+       <wsa:Address>urn:uuid:44444444-4444-4444-4444-444444444444</wsa:Address>
+      </wsa:EndpointReference>
+      <dpws:Types>wscn:ScannerServiceType</dpws:Types>
+      <dpws:ServiceId>urn:synthetic:scanner-service</dpws:ServiceId>
+     </dpws:Hosted>
+    </dpws:Relationship>
+   </wsx:MetadataSection>
+  </wsx:Metadata>
+ </soap:Body>
+</soap:Envelope>

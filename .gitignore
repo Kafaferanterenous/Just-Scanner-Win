@@ -1,0 +1,4 @@
+# Private live-device outputs are never source, fixtures, or release inputs.
+_private_live_scans_DO_NOT_SHARE/
+build-native/
+prompt_history.txt

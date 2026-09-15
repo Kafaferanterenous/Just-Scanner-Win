@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+ xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan">
+  <soap:Body>
+    <wscn:GetScannerElementsResponse>
+      <wscn:ScannerElements>
+        <wscn:ElementData wscn:Name="wscn:ScannerStatus" wscn:Valid="true">
+          <wscn:ScannerStatus>
+            <wscn:ScannerState>Stopped</wscn:ScannerState>
+            <wscn:ScannerStateReasons>
+              <wscn:ScannerStateReason>MediaJam</wscn:ScannerStateReason>
+              <wscn:ScannerStateReason>CoverOpen</wscn:ScannerStateReason>
+            </wscn:ScannerStateReasons>
+          </wscn:ScannerStatus>
+        </wscn:ElementData>
+      </wscn:ScannerElements>
+    </wscn:GetScannerElementsResponse>
+  </soap:Body>
+</soap:Envelope>

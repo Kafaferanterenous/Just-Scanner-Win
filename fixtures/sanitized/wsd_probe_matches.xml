@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+ xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+ xmlns:wsd="http://schemas.xmlsoap.org/ws/2005/04/discovery"
+ xmlns:wscn="http://schemas.microsoft.com/windows/2006/08/wdp/scan">
+ <soap:Header>
+  <wsa:Action>http://schemas.xmlsoap.org/ws/2005/04/discovery/ProbeMatches</wsa:Action>
+  <wsa:RelatesTo>urn:uuid:11111111-1111-1111-1111-111111111111</wsa:RelatesTo>
+ </soap:Header>
+ <soap:Body>
+  <wsd:ProbeMatches>
+   <wsd:ProbeMatch>
+    <wsa:EndpointReference>
+     <wsa:Address>urn:uuid:22222222-2222-2222-2222-222222222222</wsa:Address>
+    </wsa:EndpointReference>
+    <wsd:Types>wscn:ScanDeviceType</wsd:Types>
+    <wsd:Scopes>urn:synthetic:offline-fixture</wsd:Scopes>
+    <wsd:XAddrs>http://192.0.2.10:5357/synthetic-device</wsd:XAddrs>
+    <wsd:MetadataVersion>1</wsd:MetadataVersion>
+   </wsd:ProbeMatch>
+  </wsd:ProbeMatches>
+ </soap:Body>
+</soap:Envelope>

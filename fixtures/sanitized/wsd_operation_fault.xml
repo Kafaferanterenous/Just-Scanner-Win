@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+ xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan">
+  <soap:Body>
+    <soap:Fault>
+      <soap:Code>
+        <soap:Value>soap:Receiver</soap:Value>
+        <soap:Subcode><soap:Value>wscn:OperationFailed</soap:Value></soap:Subcode>
+      </soap:Code>
+      <soap:Reason>
+        <soap:Text xml:lang="en">Sanitized operation failure</soap:Text>
+      </soap:Reason>
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>

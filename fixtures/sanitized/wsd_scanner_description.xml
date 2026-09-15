@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="https://www.w3.org/2003/05/soap-envelope"
+ xmlns:wsa="https://schemas.xmlsoap.org/ws/2003/03/addressing"
+ xmlns:wscn="https://schemas.microsoft.com/windows/2006/01/wdp/scan">
+  <soap:Header>
+    <wsa:Action>https://schemas.microsoft.com/windows/2006/01/wdp/scan/GetScannerElements</wsa:Action>
+    <wsa:RelatesTo>uuid:00000000-0000-0000-0000-000000000001</wsa:RelatesTo>
+  </soap:Header>
+  <soap:Body>
+    <wscn:GetScannerElementsResponse>
+      <wscn:ScannerElements>
+        <wscn:ElementData wscn:Name="wscn:ScannerDescription" wscn:Valid="true">
+          <wscn:ScannerDescription>
+            <wscn:ScannerName>Sanitized Test Scanner</wscn:ScannerName>
+            <wscn:ScannerInfo>Offline fixture only</wscn:ScannerInfo>
+            <wscn:ScannerLocation>Test Lab</wscn:ScannerLocation>
+          </wscn:ScannerDescription>
+        </wscn:ElementData>
+      </wscn:ScannerElements>
+    </wscn:GetScannerElementsResponse>
+  </soap:Body>
+</soap:Envelope>
