@@ -12,11 +12,19 @@ add_library(just_scanner_core STATIC
     src/wia_capability_model.cpp
     src/wia_com_worker.cpp
     src/wia_discovery_model.cpp
+    src/wia_item_tree_model.cpp
+    src/wia_staged_transfer_adapter.cpp
+    src/wia_staged_worker_backend.cpp
     src/wia_transfer_model.cpp
     src/wia_worker_model.cpp
     src/wsd_discovery_model.cpp
     src/wsd_http_transport.cpp
     src/wsd_job_codec.cpp
+    src/wsd_job_session.cpp
+    src/wsd_session_worker_backend.cpp
+    src/wsd_job_transport.cpp
+    src/wsd_job_worker.cpp
+    src/wsd_job_worker_model.cpp
     src/wsd_scan_model.cpp
     src/wsd_soap_codec.cpp
 )

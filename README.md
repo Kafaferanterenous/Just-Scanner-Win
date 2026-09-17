@@ -2,18 +2,15 @@
 
 Windows-first scanner utility under clean-room development. **Use at your own risk.**
 
-Latest saved state: `RESUME_2026_09_10_DPWS_DISCOVERY_OFFLINE.md`.
-
-The authorized direct WSD validation is recorded in
-`LIVE_BROTHER_WSD_SCAN_2026_09_09.md`. It confirmed the Brother MFC-J6530DW,
-queried its capabilities/status, and retrieved one flatbed plus two ADF pages
-without a vendor scanner driver. Private outputs remain excluded from source.
+The active private development record is intentionally not part of this public
+repository. Private scan outputs, device identifiers, and local test records
+are excluded from source and releases.
 
 Just Scanner is a Windows-first scanner utility under clean-room development.
-The current GUI remains a dependency-free native mock/session application. A
-separate authorization-gated diagnostic harness has now live-validated direct
-WSD scanning on a Brother MFC-J6530DW; that network transport is not yet wired
-into the GUI. No external library, OCR engine, or vendor scanner driver was used.
+The current GUI remains a dependency-free native mock/session application.
+Authorization-gated diagnostic harnesses are kept outside this public
+repository; that network transport is not yet wired into the GUI. No external
+library, OCR engine, or vendor scanner driver was used.
 
 ## Current verified scope
 
@@ -57,10 +54,17 @@ into the GUI. No external library, OCR engine, or vendor scanner driver was used
   It uses no proxy and rejects redirects, non-success responses, unexpected
   content types, unsafe endpoints, cancellation, and oversized bodies. Its
   offline tests use a fake executor; it is not connected to discovery or GUI.
-- a bounded, privacy-preserving PowerShell WSD diagnostic harness that has
-  identified and directly scanned the authorized Brother MFC-J6530DW using its
-  live DPWS namespace profile; private scan output is ignored and never a test
-  fixture or release input.
+- a value-only WSD job transport client and session coordinator that keep
+  CreateScanJob, RetrieveImage, CancelJob, MIME/MTOM parsing, credential
+  matching, cancellation, and job-state sequencing behind the injected
+  transport. They retain no returned image and remain disabled in the GUI.
+- a separate value-only WSD worker lifecycle contract for create, retrieve, and
+  cancellation. It is offline-tested and intentionally carries no endpoint,
+  credential, document, or image data; it is not yet a threaded worker.
+- a dedicated injected WSD worker queue with value-only messages and no GUI or
+  live-transport connection. Private image-output ownership remains unbuilt.
+- a bounded, privacy-preserving PowerShell WSD diagnostic harness; private
+  scan output is ignored and never a test fixture or release input.
 
 This is not yet a scanner-compatible release. The native GUI is an offline
 mock and has not yet received visible user acceptance. PNG/JPEG/TIFF currently

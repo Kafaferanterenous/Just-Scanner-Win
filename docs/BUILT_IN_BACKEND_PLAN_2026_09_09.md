@@ -17,9 +17,8 @@ permission must never be enough on its own to activate an unimplemented backend.
    privacy-sanitized discovery only; connection, item-tree mapping, property
    read/write/readback, and transfer are not yet implemented.
 3. **WSD Scan** — first planned in-app network transport. The protocol has a
-   public Microsoft/PWG contract and the Brother MFC-J6530DW documentation lists
-   Web Services scanning. No discovery, HTTP/SOAP exchange, or device request is
-   implemented yet.
+   public Microsoft/PWG contract. No discovery, HTTP/SOAP exchange, or device
+   request is implemented yet.
 4. **eSCL/AirScan** — possible later in-app network transport. Keep it
    research-only until the project has a satisfactory specification and licence
    basis. Do not copy GPL backend code into this project without an explicit
@@ -34,13 +33,13 @@ is built into the app, whether an external driver is required, its maturity, and
 the operations presently supported. Permission cannot promote a planned or
 research-only backend into a working backend.
 
-## Candidate device path
+## Candidate device categories
 
-| Device | First path | Driver-free fallback | Current live status |
-| --- | --- | --- | --- |
-| Epson Perfection V850 Pro | WIA 2.0 through Epson's installed driver | Native USB profile only after clean-room approval | Connected but inactive; untouched |
-| Microtek ScanMaker 8700 | WIA/TWAIN availability assessment after connection | Native USB profile only after clean-room approval | Not connected; untouched |
-| Brother MFC-J6530DW | Direct WSD Scan | eSCL only after specification/licence review | Network-active; not probed |
+| Device category | First path | Driver-free fallback |
+| --- | --- | --- |
+| Local WIA-capable flatbed | WIA 2.0 through its installed driver | Native USB profile only after clean-room approval |
+| Local legacy scanner | WIA/TWAIN availability assessment after connection | Native USB profile only after clean-room approval |
+| Network WSD scanner | Direct WSD Scan | eSCL only after specification/licence review |
 
 ## Clean-room native USB boundary
 
@@ -72,13 +71,12 @@ capture session:
    `ScanDeviceType` responder and locate its hosted scan service without logging
    addresses or identifiers. Bounded description, configuration, status, and
    SOAP-fault parsing is complete using sanitized fixtures.
-4. After separate metadata-test authorization, perform one bounded Brother
-   metadata-only check. The earlier discovery-only check found a WSD scan device
-   but did not confirm its model.
+4. After separate metadata-test authorization, perform one bounded WSD
+   metadata-only check without logging a device identifier.
 5. Consider native USB only when WIA/WSD cannot meet a specific device goal.
 
 ## Evidence boundary
 
 This plan and its tests establish routing and safety policy only. They do not
-establish Epson, Microtek, Brother, WIA scan-transfer, WSD, eSCL, or native USB
+establish local WIA, legacy-scanner, network WSD, eSCL, or native USB
 compatibility.
